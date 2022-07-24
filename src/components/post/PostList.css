@@ -1,0 +1,8 @@
+.postlist__empty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40em;
+    font-weight: bold;
+
+}

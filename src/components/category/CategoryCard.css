@@ -1,0 +1,35 @@
+.categorycard {
+    background-color: #48c78e;
+    border-radius: 10px;
+    box-shadow: 5px 5px 20px;
+    width:200px;
+    margin: 25px auto;
+}
+
+.categorycard__header {
+    display: flex;
+    justify-content: center;
+    padding: 5px 10px;
+}
+
+.categorycard__header__title {
+    font-size: 1.25rem;
+    color: white;
+}
+
+.category_btn {
+    display: flex;
+    justify-content: center;
+}
+
+.cardBtn {
+    background-color: #48c78e;
+    border: none;
+    font-size: 1.25rem;
+}
+
+.cardBtn:active {
+    background-color: #48c78e;
+    border: none;
+    box-shadow: 2px 2px 5px black;
+}

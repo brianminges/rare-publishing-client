@@ -1,0 +1,27 @@
+.userList {
+    width: 600px;
+    margin: 0 auto;
+}
+
+.user__list__header__one {
+    width: 150px;
+}
+
+.user__list__header__two {
+    width: 75px;
+}
+
+.user__list__header__three {
+    width: 75px;
+}
+
+.user__list__header__four {
+    width: 250px;
+}
+
+.users__list__headers {
+    display: flex;
+    border-bottom: 4px solid #48c78e;
+    font-weight: bold;
+    margin-top: 40px;
+}

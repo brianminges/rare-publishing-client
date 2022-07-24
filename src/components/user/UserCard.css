@@ -1,0 +1,21 @@
+.user__list__item__one {
+    width: 150px;
+}
+
+.user__list__item__two {
+    width: 75px;
+}
+
+.user__list__item__three {
+    width: 75px;
+}
+
+.user__list__item__four {
+    width: 250px;
+}
+
+.users__list__items {
+    display: flex;
+    border-bottom: 2px solid #48c78e;
+    margin-top: 10px;
+}

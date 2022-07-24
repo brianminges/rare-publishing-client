@@ -1,0 +1,52 @@
+.overlay {
+    align-items: center;
+    background-color: rgba(0, 0, 0, .3);
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.overlay__inner {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px black;
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    padding: 30px;
+    position: relative;
+    width: 100%;
+}
+
+.overlayBtns {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.overlayBtn {
+    background-color: #48c78e;
+    border-radius: 5px;
+    border: .5px black solid;
+    box-shadow: 2px 4px 10px gray;
+    width: 85px;
+    height: 40px;
+    margin: 20px auto;
+    font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-size: 1em;
+}
+
+.overlayBtn:hover {
+    background-color: rgb(72, 199, 142, .50);
+    border-radius: 5px;
+    border: .5px black solid;
+    width: 85px;
+    height: 40px;
+    margin: 20px auto;
+    font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-size: 1em;
+}

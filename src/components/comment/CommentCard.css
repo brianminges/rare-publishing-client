@@ -1,0 +1,15 @@
+.comment {
+    margin: 20px auto;
+    width: 600px
+}
+
+.comment__details {
+    font-size: .75rem;
+    text-align: right;
+    border-bottom: 2px solid #48c78e;
+}
+
+.comment__delete__icon {
+    border: none;
+    margin-left: 10px
+}

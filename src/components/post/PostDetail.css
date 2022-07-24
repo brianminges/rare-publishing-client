@@ -1,0 +1,62 @@
+.post__detail__group {
+    width: 600px;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+.post__detail__info {
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.post__detail__category {
+    text-transform: uppercase;
+}
+
+.post__detail__buttons {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.post__detail__button {
+    background-color: #48c78e;
+    border-radius: 5px;
+    border: .5px black solid;
+    box-shadow: 2px 4px 10px gray;
+    width: 125px;
+    height: 40px;
+    margin: 20px auto;
+    font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-size: 1em;
+    display: block;
+}
+
+.post__detail__button:hover {
+    background-color: rgb(72, 199, 142, .50);
+    border-radius: 5px;
+    border: .5px black solid;
+    
+    width: 125px;
+    height: 40px;
+    margin: 20px auto;
+    font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-size: 1em;
+    display: block;
+}
+
+#unsubscribe {
+    background-color: red;
+}
+
+#unsubscribe.hover {
+    background-color: pink;
+    border-radius: 5px;
+    border: .5px black solid;
+    width: 125px;
+    height: 40px;
+    margin: 20px auto;
+    font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-size: 1em;
+    display: block;
+}

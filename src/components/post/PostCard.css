@@ -1,0 +1,66 @@
+.postcard {
+    background-color: #48c78e;
+    border-radius: 10px;
+    box-shadow: 5px 5px 20px;
+    width:600px;
+    margin: 25px auto;
+}
+
+.postcard__header {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px;
+}
+
+.postcard__header__title {
+    font-size: 1.25rem;
+    color: white;
+}
+
+.postcard__header__date {
+    font-size: .8rem;
+    color: white;
+}
+
+.postcard__footer__auth {
+    color: white;
+    padding: 5px 10px;
+}
+
+.postcard__footer__cat {
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.postcard__photo {
+    width: 600px;
+    height: 350px;
+    overflow: hidden;
+}
+
+.cardBtn {
+    background-color: #48c78e;
+    border: none;
+    font-size: 1.25rem;
+}
+
+.cardBtn:active {
+    background-color: #48c78e;
+    border: none;
+    box-shadow: 2px 2px 5px black;
+}
+
+.postcard__footer__group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+#cardBbt__edit {
+    margin-right: 10px;
+}
+
+#cardBbt__delete {
+    margin-right: 10px;
+}
