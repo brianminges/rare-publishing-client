@@ -1,6 +1,6 @@
 import react, { useEffect, useState } from "react";
 import { PostCard } from "./PostCard";
-import { getPosts, deletePost, getPostByFilteredCategory, getCategories, getPostByFilteredUser } from "./PostManager"
+import { getPosts, deletePost, getPostByFilteredCategory, getCategories, getPostByFilteredUser, searchPosts } from "./PostManager"
 import { getAllUsers } from "./../user/UserManager"
 import "./../Rare.css"
 import "./PostForm.css";
@@ -12,6 +12,7 @@ export const PostList = () => {
     const [ reset, setReset ] = useState(false)
     const [ filterCategoryId, setFilterCategoryId] = useState(0);
     const [ filterUserId, setFilterUserId ] = useState(0);
+    const [ searchValue, setSearchValue ] = useState("")
 
     const loadPosts = () => {
         getPosts().then(data => setPosts(data))
@@ -41,20 +42,27 @@ export const PostList = () => {
             })
         }
     }
+    
+    const handleSearch = (searchTerm) => {
+        searchPosts(searchTerm).then(data => {
+            setPosts(data)
+        })
+    }
 
     const handleChange = (e) => {
         e.preventDefault()
         const value = e.target.value
         if (e.target.id === "category") {
             setFilterCategoryId(parseInt(value))
-            console.log('filterCategoryId', filterCategoryId)
         }
         else if (e.target.id === "user") {
             setFilterUserId(parseInt(value))
-            console.log('filterUserId', filterUserId)
+        }
+        else if (e.target.id === "search") {
+            setSearchValue(value)
         }
     }
-
+ 
     // resets filters
     const handleReset = () => {
         setReset(true)
@@ -102,7 +110,7 @@ export const PostList = () => {
                             id="category" 
                             className="form__input" 
                             onChange={handleChange}>
-                            <option value="">Filter by Category</option>
+                            <option value="">Select Category</option>
                             {categories.map(category => <option key={category.id} value={category.id}>{category.label}</option>)}
                         </select>
                         <button 
@@ -120,7 +128,7 @@ export const PostList = () => {
                             id="user" 
                             className="form__input" 
                             onChange={handleChange}>
-                            <option value="">Filter by User</option>
+                            <option value="">Select User</option>
                             {users.map(user => <option key={user.id} value={user.id}>{user.user.username}</option>)}
                         </select>
                         <button 
@@ -133,6 +141,22 @@ export const PostList = () => {
                 </fieldset>
                 <fieldset className="categoryFilterForm__fieldset">
                     <div className="formgrid">
+                        <input
+                            type="text"
+                            id="search"
+                            placeholder="Search by title"
+                            onChange={handleChange}>
+                        </input>
+                        <button 
+                            type="button"
+                            className="filterBtn"
+                            onClick={()=> {handleSearch(searchValue)}}>
+                                Search
+                        </button>
+                    </div>
+                </fieldset>
+                {/* <fieldset className="categoryFilterForm__fieldset">
+                    <div className="formgrid">
                         <button
                             type="submit"
                             className="filterBtn"
@@ -141,7 +165,7 @@ export const PostList = () => {
                                 Reset
                         </button>
                     </div>
-                </fieldset>
+                </fieldset> */}
             </form> 
                        
             {posts.map(post =>
