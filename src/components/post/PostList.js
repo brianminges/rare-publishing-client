@@ -1,15 +1,17 @@
 import react, { useEffect, useState } from "react";
 import { PostCard } from "./PostCard";
-import { getPosts, deletePost, getPostByCategory, getCategories } from "./PostManager"
+import { getPosts, deletePost, getPostByFilteredCategory, getCategories, getPostByFilteredUser } from "./PostManager"
+import { getAllUsers } from "./../user/UserManager"
 import "./../Rare.css"
-import { useParams } from "react-router-dom";
 import "./PostForm.css";
 
 export const PostList = () => {
-    const [posts, setPosts] = useState([])
-    const [categories, setCategories] = useState([])
-    const { categoryId } = useParams()
-    const [filterCategoryId, setFilterCategoryId] = useState(0)
+    const [ posts, setPosts ] = useState([]);
+    const [ categories, setCategories ] = useState([]);
+    const [ users, setUsers ] = useState([]);
+    const [ reset, setReset ] = useState(false)
+    const [ filterCategoryId, setFilterCategoryId] = useState(0);
+    const [ filterUserId, setFilterUserId ] = useState(0);
 
     const loadPosts = () => {
         getPosts().then(data => setPosts(data))
@@ -17,26 +19,45 @@ export const PostList = () => {
 
     useEffect(() => {
         loadPosts()
-    }, [])
-
-    useEffect(()  => {
-        console.log(posts)
-    }, [posts])
+    }, [reset])
 
     useEffect(() => {
         getCategories().then(data => setCategories(data))
-    }
-    , [])
+    }, [])
 
-    const handleFilterByCategory = (categoryId) => {
-        getPostByCategory(categoryId).then(data => {
-            setPosts(data)})
+    useEffect(() => {
+        getAllUsers().then(data => setUsers(data))
+    }, [])
+
+    const handleFilter = (id) => {
+        if (filterCategoryId === 0 && filterUserId !== 0) {
+            getPostByFilteredUser(id).then(data => {
+                setPosts(data)
+            })
+        }
+        else if (filterCategoryId !== 0 && filterUserId === 0) {
+            getPostByFilteredCategory(id).then(data => {
+                setPosts(data)
+            })
+        }
     }
 
-    const changeCategoryState = (domEvent) => {
-        domEvent.preventDefault()
-        const value = domEvent.target.value
-        setFilterCategoryId(parseInt(value))
+    const handleChange = (e) => {
+        e.preventDefault()
+        const value = e.target.value
+        if (e.target.id === "category") {
+            setFilterCategoryId(parseInt(value))
+            console.log('filterCategoryId', filterCategoryId)
+        }
+        else if (e.target.id === "user") {
+            setFilterUserId(parseInt(value))
+            console.log('filterUserId', filterUserId)
+        }
+    }
+
+    // resets filters
+    const handleReset = () => {
+        setReset(true)
     }
 
     // sorts all posts with most recent at top of page
@@ -47,29 +68,82 @@ export const PostList = () => {
         setSortedPosts(tempPosts)
     }, [posts])
 
+    // sorts all users alphabetically from top of dropdown list
+    const [sortedUsers, setSortedUsers] = useState([]);
+
+    useEffect(() => {
+        const tempUsers = users.sort((a,b) => (a.user.username.toLowerCase() > b.user.username.toLowerCase()) ? 1 : -1)
+        setSortedUsers(tempUsers)
+    }, [users])
+
+    // sorts all categories alphabetically from top of dropdown list
+    const [sortedCategories, setSortedCategories] = useState([]);
+
+    useEffect(() => {
+        const tempCategories = categories.sort((a,b) => (a.label.toLowerCase() > b.label.toLowerCase()) ? 1 : -1)
+        setSortedCategories(tempCategories)
+    }, [categories])
+
     // deletes posts
     const delPost = (postId) => {
         deletePost(postId)
             .then(() => getPosts().then(setPosts))
     }
 
+
     return (
         <article className="postlist">
             <h2>All posts</h2>
             <form className="categoryFilterForm">
-                <fieldset>
+                <fieldset className="categoryFilterForm__fieldset">
                     <div className="formgrid">
-                        <label htmlFor="category">Filter by category</label>
-                        <select name="category" id="category" className="form__input" onChange={changeCategoryState}>
-                            <option value="">Select Category</option>
+                        <select 
+                            name="category" 
+                            id="category" 
+                            className="form__input" 
+                            onChange={handleChange}>
+                            <option value="">Filter by Category</option>
                             {categories.map(category => <option key={category.id} value={category.id}>{category.label}</option>)}
                         </select>
-                        <button type="button"
-                            onClick={()=> {handleFilterByCategory(parseInt(filterCategoryId))}}>
-                                Filter</button>
+                        <button 
+                            type="button"
+                            className="filterBtn"
+                            onClick={()=> {handleFilter(parseInt(filterCategoryId))}}>
+                                Filter
+                        </button>
                     </div>
                 </fieldset>
-            </form>            
+                <fieldset className="categoryFilterForm__fieldset">
+                    <div className="formgrid">
+                        <select 
+                            name="user" 
+                            id="user" 
+                            className="form__input" 
+                            onChange={handleChange}>
+                            <option value="">Filter by User</option>
+                            {users.map(user => <option key={user.id} value={user.id}>{user.user.username}</option>)}
+                        </select>
+                        <button 
+                            type="button"
+                            className="filterBtn"
+                            onClick={()=> {handleFilter(parseInt(filterUserId))}}>
+                                Filter
+                        </button>
+                    </div>
+                </fieldset>
+                <fieldset className="categoryFilterForm__fieldset">
+                    <div className="formgrid">
+                        <button
+                            type="submit"
+                            className="filterBtn"
+                            id="resetBtn"
+                            onClick={()=> {handleReset}}>
+                                Reset
+                        </button>
+                    </div>
+                </fieldset>
+            </form> 
+                       
             {posts.map(post =>
                 <PostCard
                 key={post.id}

@@ -77,7 +77,16 @@ export const updatePost = (post, id) => {
     })
 }
 
-export const getPostByCategory = (categoryId) => {
+export const getPostsByUserSubscription = () => {
+    return fetch(`${remoteURL}/posts/subscribed`, {
+        headers: {
+            "Authorization": `Token ${localStorage.getItem("token")}`
+        }
+    })
+        .then(response => response.json())
+}
+
+export const getPostByFilteredCategory = (categoryId) => {
     return fetch(`${remoteURL}/posts?category=${categoryId}`, {
         headers: {
             "Authorization": `Token ${localStorage.getItem("token")}`
@@ -86,8 +95,8 @@ export const getPostByCategory = (categoryId) => {
         .then(response => response.json())
 }
 
-export const getPostsByUserSubscription = () => {
-    return fetch(`${remoteURL}/posts/subscribed`, {
+export const getPostByFilteredUser = (userId) => {
+    return fetch(`${remoteURL}/posts?user=${userId}`, {
         headers: {
             "Authorization": `Token ${localStorage.getItem("token")}`
         }
