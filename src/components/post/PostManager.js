@@ -103,3 +103,12 @@ export const getPostByFilteredUser = (userId) => {
     })
         .then(response => response.json())
 }
+
+export const searchPosts = (searchTerm) => {
+    return fetch(`${remoteURL}/posts?q=${searchTerm}`, {
+        headers: {
+            "Authorization": `Token ${localStorage.getItem("token")}`
+        }
+    })
+        .then(response => response.json())
+}   
