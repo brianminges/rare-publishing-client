@@ -1,4 +1,4 @@
-## Rare Publishing: It's sorta like Facebook
+# Rare Publishing: It's sorta like Facebook
 
 ## General information
 
