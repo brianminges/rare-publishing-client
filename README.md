@@ -25,8 +25,10 @@ This is a group full stack project (React, Django) as part of a software develop
 - User profiles display differently based on presence of profile photo.
 
 ## Selected pages and features
-Click to enlarge
-<img src="https://user-images.githubusercontent.com/91277363/183235503-2320aecd-b41a-442f-9b55-0449347557ee.gif" width="23%"></img> <img src="https://user-images.githubusercontent.com/91277363/183235508-e493b8ae-882b-4157-8a9f-945bf7f59378.gif" width="23%"></img> <img src="https://user-images.githubusercontent.com/91277363/183235551-c8fc1dae-6abd-48e9-a2ed-c40ea9575151.gif" width="23%"></img> <img src="https://user-images.githubusercontent.com/91277363/183235554-3ec364ba-1a7b-48c9-afd3-9222e16e409b.gif" width="23%"></img> <img src="https://user-images.githubusercontent.com/91277363/183235557-0785664a-c0fa-4a3a-8857-9b5cdb723a87.gif" width="23%"></img> <img src="https://user-images.githubusercontent.com/91277363/183235558-f6673bd8-b49b-4346-81aa-f5f2172e4bf1.gif" width="23%"></img> <img src="https://user-images.githubusercontent.com/91277363/183235559-5be37afa-6607-4a00-a1be-050ad9572b4c.gif" width="23%"></img> 
+Click to enlarge  
+<br/><br/> 
+<img src="https://user-images.githubusercontent.com/91277363/183235503-2320aecd-b41a-442f-9b55-0449347557ee.gif" width="23%"></img> <img src="https://user-images.githubusercontent.com/91277363/183235508-e493b8ae-882b-4157-8a9f-945bf7f59378.gif" width="23%"></img> <img src="https://user-images.githubusercontent.com/91277363/183235551-c8fc1dae-6abd-48e9-a2ed-c40ea9575151.gif" width="23%"></img> <img src="https://user-images.githubusercontent.com/91277363/183235554-3ec364ba-1a7b-48c9-afd3-9222e16e409b.gif" width="23%"></img> <img src="https://user-images.githubusercontent.com/91277363/183235557-0785664a-c0fa-4a3a-8857-9b5cdb723a87.gif" width="23%"></img> <img src="https://user-images.githubusercontent.com/91277363/183235558-f6673bd8-b49b-4346-81aa-f5f2172e4bf1.gif" width="23%"></img> <img src="https://user-images.githubusercontent.com/91277363/183235559-5be37afa-6607-4a00-a1be-050ad9572b4c.gif" width="23%"></img>  
+
 
 ## Setup
 ### Front end
