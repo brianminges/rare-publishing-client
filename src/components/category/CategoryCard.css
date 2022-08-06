@@ -1,35 +1,48 @@
-.categorycard {
-    background-color: #48c78e;
-    border-radius: 10px;
-    box-shadow: 5px 5px 20px;
-    width:200px;
-    margin: 25px auto;
-}
-
-.categorycard__header {
+.category__list {
+    width: 300px;
+    margin: 0 auto;
     display: flex;
-    justify-content: center;
-    padding: 5px 10px;
 }
 
-.categorycard__header__title {
-    font-size: 1.25rem;
-    color: white;
+.category__list__items {
+    margin-top: 10px;
+    border-bottom: 2px solid #48c78e;
 }
 
-.category_btn {
-    display: flex;
-    justify-content: center;
+.category__list__item__one {
+    width: 230px;
 }
 
-.cardBtn {
-    background-color: #48c78e;
+.category__list__item__two {
+    width: 20px;
+    text-align: right;
+    margin-right: 20px;
+ 
+}
+
+.category__list__item__three {
+    width: 20px;
+    text-align: right;
+ 
+}
+
+
+#category__button__edit {
+    background-color: white;
     border: none;
     font-size: 1.25rem;
 }
 
-.cardBtn:active {
-    background-color: #48c78e;
+#category__button__delete {
+    background-color: white;
     border: none;
-    box-shadow: 2px 2px 5px black;
+    font-size: 1.25rem;
+    margin-bottom: 4px;
+}
+
+
+.users__list__items {
+    display: flex;
+    border-bottom: 2px solid #48c78e;
+    margin-top: 10px;
 }

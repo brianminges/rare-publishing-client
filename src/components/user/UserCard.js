@@ -4,8 +4,6 @@ import "./UserCard.css"
 
 export const UserCard = ({ user }) => {
 
-    console.log(user)
-
     return (
         <>
         <div className="users__list__items">

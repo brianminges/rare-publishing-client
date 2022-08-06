@@ -44,6 +44,7 @@ export const PostForm = () => {
                         autoFocus
                         value={post.title}
                         onChange={changeState}
+                        autocomplete="off"
                     /> 
                 </div>    
             </fieldset>
@@ -59,6 +60,7 @@ export const PostForm = () => {
                         placeholder="yyyy-mm-dd"
                         value={post.publicationDate}
                         onChange={changeState}
+                        autocomplete="off"
                     /> 
                 </div>    
             </fieldset>
@@ -74,6 +76,7 @@ export const PostForm = () => {
                         placeholder="http://imageurl.com"
                         value={post.imageURL}
                         onChange={changeState}
+                        autocomplete="off"
                     /> 
                 </div>    
             </fieldset>
@@ -88,6 +91,7 @@ export const PostForm = () => {
                         required
                         value={post.content}
                         onChange={changeState}
+                        autocomplete="off"
                     /> 
                 </div>    
             </fieldset>

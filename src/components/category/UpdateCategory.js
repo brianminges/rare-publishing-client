@@ -62,6 +62,7 @@ export const UpdateCategoryForm = () => {
                             placeholder="Category name"
                             value={category.label}
                             onChange={handleFieldChange}
+                            autoComplete="off"
                         />
                         <button type="submit" 
                             onClick={updateExistingCategory}
