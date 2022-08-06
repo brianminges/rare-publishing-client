@@ -28,25 +28,23 @@ export const CategoryCard = ({ category }) => {
 
     return (
         <>
-        <section className="categorycard">
-            <div className="categorycard__header">
-                <h3 className="categorycard__header__title">{category.label}</h3>
-            </div>
-            <div className="category_btn">
+        <div className="category__list category__list__items">
+            <p className="category__list__item category__list__item__one">{category.label}</p>
+            <p className="category__list__item category__list__item__two">
                 <button 
-                    className="cardBtn" 
-                    id="cardBbt__edit"
-                    onClick={() => history.push(`/categories/${category.id}/edit`)}
-                    >✒️</button>
-                <button 
-                    className="cardBtn" 
-                    id="cardBbt__delete"
+                    id="category__button__edit"
+                    onClick={() => history.push(`/categories/${category.id}/edit`)}>
+                    ✒️
+                </button></p>
+            <p className="category__list__item category__list__item__three"><button 
+                    id="category__button__delete"
                     onClick={() => {
                         delCategory(category.id)
                         window.location.reload(false)
-                    }}>🗑️</button>
-            </div>
-        </section>
+                    }}>
+                        🗑️
+                    </button></p>
+        </div>
         </>
     )
 }

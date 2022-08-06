@@ -36,25 +36,31 @@ export const CategoryList = () => {
         <form className="categoryForm">
             <fieldset>
                 <div className="formgrid">
-                    <label htmlFor="label">Category name</label>
-                    <input 
-                        type="text" 
-                        name="label" 
-                        className="form__input" 
-                        required 
-                        value={category.label} 
-                        onChange={changeState}
-                    />
-                    <button type="submit"
-                        onClick={(e) => {
-                            e.preventDefault();
-                            const newCategory = {
-                                id: category.id,
-                                label: category.label
-                            }
-                            createCategory(newCategory).then(() => history.push("/categories")).then(() => getCategories().then(setCategories))
-                        }}
-                        className="formgrid__button">Add</button>
+                    <div className="formgrid__add">
+                        <input 
+                            type="text" 
+                            name="label" 
+                            id="formgrid__input"
+                            className="form__input" 
+                            required 
+                            value={category.label} 
+                            onChange={changeState}
+                            placeholder="Category name"
+                            autocomplete="off"
+                        />
+                        <button type="submit"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                const newCategory = {
+                                    id: category.id,
+                                    label: category.label
+                                }
+                                createCategory(newCategory).then(() => history.push("/categories")).then(() => getCategories().then(setCategories))
+                            }}
+                            className="formgrid button">
+                                Add
+                            </button>
+                    </div>
                 </div>
             </fieldset>
         </form>

@@ -36,6 +36,7 @@ export const CommentForm = () => {
                     autoFocus
                     value={comment.content}
                     onChange={changeState}
+                    autoComplete="off"
                 />
             </div>
         </fieldset>
@@ -51,6 +52,7 @@ export const CommentForm = () => {
                     placeholder="YYYY-MM-DD"
                     value={comment.createdOn}
                     onChange={changeState}
+                    autoComplete="off"
                 />
             </div>
         </fieldset>

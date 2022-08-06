@@ -145,7 +145,8 @@ export const PostList = () => {
                             type="text"
                             id="search"
                             placeholder="Search by title"
-                            onChange={handleChange}>
+                            onChange={handleChange}
+                            autocomplete="off">
                         </input>
                         <button 
                             type="button"
