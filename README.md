@@ -4,12 +4,12 @@
 This is a group full stack project (React, Django) as part of a software development bootcamp at Nashville Software School. My contributions were creating posts; displaying posts based on subscriptions, all posts and user posts; post submission form; all comment functionality; filtering for user and title search; all design and css. 
 
 ## Technologies
-React v.17
-ES6
-Python v.3.9
-Django v.4.0
-HTML5
-CSS3
+- React v.17
+- ES6
+- Python v.3.9
+- Django v.4.0
+- HTML5
+- CSS3
  
 ## Features
 - Full CRUD capabilities.
