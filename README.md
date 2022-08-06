@@ -1,7 +1,7 @@
 # Rare Publishing: It's sorta like Facebook
 
 ## General information
-This is a group full stack project (React, Django) as part of a software development bootcamp at Nashville Software School. My contributions were creating posts; displaying posts based on subscriptions, all posts and user posts; post submission form; all comment functionality; filtering for user and title search; all design and css. 
+This is a group full stack project (React, Django) as part of a software development bootcamp at Nashville Software School. Other contributors were [madison-hepner](https://github.com/madison-hepner), [snagle33](https://github.com/snagel33) and [kylebuckner88](https://github.com/kylebuckner88). My contributions were creating posts; displaying posts based on subscriptions, all posts and user posts; post submission form; all comment functionality; filtering for user and title search; all design and css. 
 
 ## Technologies
 - React v.17
